@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            DarkBlue: 'hsl(249, 10%, 26%)',
+            GrayishBlue: 'hsl(246, 25%, 77%)',
+            Green: 'hsl(154, 59%, 51%)',
+            Red: 'hsl(0, 100%, 74%)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  </style>
+  <style>
+
+    body {
+      background-color: hsl(0, 100%, 74%);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @media only screen and (min-width: 1024px){
+      body {
+        background-image: url("./images/bg-intro-desktop.png");
+      }
+    }
+
+    @media only screen and (min-width: 375px ) and (max-width: 1023px) {
+      body {
+        background-image: url("./images/bg-intro-mobile.png");
+      }
+
+      .msg {
+        font-size: 10px;
+      }
+    }
+
+  </style>
+  <title> Sign up Form </title>
+</head>
+<body>
+  <main class="flex flex-col-reverse lg:flex-row-reverse items-center justify-between my-20 ">
+    <div class="flex flex-col items-center text-center lg:w-3/5">
+      <h3 style="color: hsl(246, 25%, 77%); background-color: hsl(248, 32%, 49%);" class="leading-relaxed w-10/12 lg:w-8/12 font-light px-12 lg:px-0 mt-20 lg:mt-0 py-5 rounded-lg"> <p style="color: white;" class="font-bold inline"> Try it free 7 days </p> then $20/mo. thereafter </h3>
+      <div class="bg-white w-10/12 lg:w-8/12 mt-6 rounded-xl">
+        <form id="myForm" class="flex flex-col justify-center px-8 gap-6 my-4 lg:my-12">
+          <input type="text" placeholder="First Name" class="text-xs font-semibold border focus:outline-none focus:border-DarkBlue focus:ring-0.5 focus:ring-DarkBlue rounded-lg px-5 lg:px-10 py-4" required>
+          <input type="text" placeholder="Last Name" class="text-xs font-semibold border focus:outline-none focus:border-DarkBlue focus:ring-0.5 focus:ring-DarkBlue rounded-lg px-5 lg:px-10 py-4" required>
+          <input id="emailAddr" type="email" placeholder="Email Address" class="text-xs font-semibold border focus:outline-none focus:border-DarkBlue focus:ring-0.5 focus:ring-DarkBlue rounded-lg px-5 lg:px-10 py-4" required>
+          <input type="password" placeholder="Password" class="text-xs font-semibold border focus:outline-none focus:border-DarkBlue focus:ring-0.5 focus:ring-DarkBlue rounded-lg px-5 lg:px-10 py-4" required>
+          <button id="form-button" type="button" class="bg-Green py-4 text-white text-sm lg:text-lg font-semibold rounded-lg" onclick="validate_form()"> CLAIM YOUR FREE TRIAL </button>
+          <div class="relative">
+            <p style="color: hsl(0, 36%, 70%);" id="message-poss" class="msg hidden lg:text-sm absolute left-10 lg:left-32 -top-2"> Free trial registration Successful! </p>
+            <div style="color: hsl(0, 36%, 70%);" id="message-neg" class="hidden text-xs lg:text-base absolute flex items-center gap-1 lg:gap-2 ml-8 lg:ml-12 -top-2">
+              <img src="./images/icon-error.svg" alt="error" class="opacity-50 relative lg:-top-0.5 w-3 lg:w-4">
+              <p class="msg"> Invalid Email id or Incomplete form </p>
+            </div> 
+          </div>
+          <h3 class="leading-relaxed relative lg:top-4 text-xs lg:text-sm text-GrayishBlue"> By clicking the button, you are agreeing to our <p class="inline text-Red font-semibold"> Terms and Services </p> </h3>
+        </form>
+      </div>
+    </div>
+    <div class="flex flex-col lg:text-left text-center items-center lg:w-2/5 text-white lg:ml-24">
+      <h3 class="text-3xl lg:text-6xl font-bold mb-6 lg:mb-8"> Learn to code by watching others </h3>
+      <p class="text-sm lg:text-base w-3/5 lg:w-full"> See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.  
+      </p>
+    </div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>
